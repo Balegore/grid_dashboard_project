@@ -1,22 +1,32 @@
+/*VAR AND ROOT STYLING*/
 :root{
     --main-bg-color: lightgrey;
     --main-font-color: black;
     --main-accent-color: yellow;
     --card-bg-color: white;
     --sidebar-bg-color: blue;
-    --sidebar-font-color: white;   
+    --sidebar-font-color: white;
+    box-sizing: border-box;
+} 
    
-}
-
+/*DEAFAULT STYLING*/
 body, html{
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;
 }
 
 ul, li{
     list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3,h4{
+    padding: 0;
+    margin: 0;
+}
+
+p{
     margin: 0;
 }
 
@@ -29,6 +39,7 @@ body{
     overflow-x: auto;
 }
 
+/*SIDEBARD CSS*/
 .sidebar
 {
     background-color: var(--sidebar-bg-color);
@@ -36,6 +47,7 @@ body{
     color: var(--sidebar-font-color);   
 }
 
+/*HEADER CSS*/
 .header{
     background-color: var(--card-bg-color);
     grid-area: 1 / 2 / 2 / 3;
@@ -44,13 +56,19 @@ body{
     grid-template-columns: 2fr 1fr;
 }
 
+/*DASHBOARD CSS*/
 .dashboard{
     background-color: var(--main-bg-color);
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(20rem, 1fr) 20rem; 
-    grid-template-rows: 4rem 26rem 4rem 26rem min-content;
+    grid-template-rows: 3rem min-content 3rem min-content min-content;
     padding: 1rem;
+}
+
+
+.dashboard>h2{
+    align-self: flex-end;
 }
 
 .projectCardContainer{
@@ -65,20 +83,57 @@ body{
     align-content: flex-start;   
 }
 
-.projectCard{
+.announcementContainer, .projectCard, .trendingContainer{
     background-color: var(--card-bg-color);
     border-radius: 5px;
+}
+
+/*PROJECT CARD CSS */
+.projectCard{
+    justify-self: left;
+    background: linear-gradient(to right,
+                var(--main-accent-color) 10px,
+                var(--card-bg-color) 10px);
     height: 15rem;
     width: 25rem;
+    display: grid;
 }
 
+.projectCard>*{
+    padding: 0 2rem 0 2rem;  
+}
 
+.projectCard>h3{
+    align-self: flex-end;
+}
+
+.projectCard>p{
+    overflow: scroll;
+}
+
+.projectCard>div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    gap: 1rem;    
+}
+
+/*ANOUCEMENT CONTAINER CSS*/
 .announcementContainer{
-   display: grid;
+    display: grid;
+    padding: 1rem;
 }
 
+.announcementContainer>div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*TRENDING CONTAINER CSS*/
 .trendingContainer{
     grid-area: 4 / 2 / 5 / 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem;
 }
