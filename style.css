@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /*VAR AND ROOT STYLING*/
 :root{
     --main-bg-color: lightgrey;
@@ -7,7 +9,23 @@
     --sidebar-bg-color: blue;
     --sidebar-font-color: white;
     box-sizing: border-box;
-} 
+    font-family: 'Roboto', sans-serif;
+}
+
+/*SCROLL BAR*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
    
 /*DEAFAULT STYLING*/
 body, html{
@@ -31,12 +49,15 @@ p{
 }
 
 body{
-    height: fit-content;
     background-color: black;
     display: grid;
-    grid-template-columns: 20rem minmax(50rem, 1fr);
+    grid-template-columns: 14rem minmax(50rem, 1fr);
     grid-template-rows: 10rem min-content;
-    overflow-x: auto;
+    overflow: hidden;
+}
+
+.projectCard, .announcementContainer, .trendingContainer, .header{
+    box-shadow: 1px 4px 3px grey;
 }
 
 /*SIDEBARD CSS*/
@@ -54,6 +75,7 @@ body{
     
     display: grid;
     grid-template-columns: 2fr 1fr;
+    z-index: 1; /*Need to put header above other DOM objects Z space for box shadow to work*/
 }
 
 /*DASHBOARD CSS*/
@@ -64,6 +86,8 @@ body{
     grid-template-columns: minmax(20rem, 1fr) 20rem; 
     grid-template-rows: 3rem min-content 3rem min-content min-content;
     padding: 1rem;
+    overflow-y: scroll;
+    height: 100vh; /*Allows scrolling by setting heigh to 100% of view height*/ 
 }
 
 
@@ -75,7 +99,7 @@ body{
     grid-area: 2 / 1 / -1 / 2;
     
     display: grid;
-    grid-template-columns: repeat(auto-fill, 25rem); 
+    grid-template-columns: repeat(auto-fill, 23rem); 
     grid-auto-rows: min-content;
 
     gap: 1rem;    
@@ -95,7 +119,7 @@ body{
                 var(--main-accent-color) 10px,
                 var(--card-bg-color) 10px);
     height: 15rem;
-    width: 25rem;
+    width: 23rem;
     display: grid;
 }
 
@@ -118,10 +142,18 @@ body{
     gap: 1rem;    
 }
 
+.projectCard>div>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
 /*ANOUCEMENT CONTAINER CSS*/
 .announcementContainer{
     display: grid;
     padding: 1rem;
+    row-gap: 1rem;
 }
 
 .announcementContainer>div{
@@ -136,4 +168,5 @@ body{
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 1rem;
+    row-gap: 2rem;
 }
