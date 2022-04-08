@@ -108,7 +108,7 @@ body{
 }
 
 .projectCard>p{
-    overflow: scroll;
+    overflow: none;
 }
 
 .projectCard>div{
