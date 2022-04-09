@@ -115,7 +115,7 @@ body{
     width: 4rem;
 }
 
-/*DASHBOARD */
+/*DASHBOARD*/
 .dashboard{
     background-color: var(--main-bg-color);
     display: grid;
@@ -124,7 +124,7 @@ body{
     grid-template-rows: 3rem min-content 3rem min-content 10fr;
     padding: 1rem;
     padding-right: 2rem;
-    height: 100vh; /*safe gaurds body from appearing*/
+    min-height: 100vh; /*safe guards body from appearing*/
 }
 
 
