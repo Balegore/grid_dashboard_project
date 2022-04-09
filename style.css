@@ -8,6 +8,7 @@
     --card-bg-color: white;
     --sidebar-bg-color: blue;
     --sidebar-font-color: white;
+    --button-hover-color: lightblue;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -37,6 +38,10 @@ ul, li{
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+button{
+    cursor: pointer;
 }
 
 h1,h2,h3,h4{
@@ -75,21 +80,48 @@ body{
     
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding-left: 3rem;
+    padding: 1rem 3rem;
     z-index: 1; /*Need to put header above other DOM objects Z space for box shadow to work*/
 }
 
+.header>form{
+    display:flex;
+    align-items: flex-start;
+    gap: .25rem;
+}
+
+.header>form>input{
+    height: 1.5rem;
+    width: 26rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background-color: var(--main-bg-color);
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
 .nametag{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5rem;
+    align-items: center;
+    justify-self: right;
+    gap: .5rem;
+}
+
+.nametag>button{
+    background-color: transparent;
+    border: none;
 }
 
 .header>.nametag>img{
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .headerButtons{
     align-self: center;
+    justify-self: right;
     display: flex;
     gap: .5rem;
 }
@@ -102,6 +134,9 @@ body{
     width: 5.5rem;
     border-radius: 1.25rem;
     font-size: 1rem;
+}
+.headerButtons>button:hover{
+    background-color: var(--button-hover-color);
 }
 
 /*GREETING*/
@@ -186,7 +221,6 @@ body{
 .projectCard>div>button{
     border: none;
     background-color: transparent;
-    cursor: pointer;
     outline: none;
 }
 
