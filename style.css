@@ -52,15 +52,15 @@ body{
     background-color: black;
     display: grid;
     grid-template-columns: 14rem minmax(50rem, 1fr);
-    grid-template-rows: 10rem min-content;
-    overflow: hidden;
+    grid-template-rows: 10rem;
+    overflow-y: scroll;
 }
 
 .projectCard, .announcementContainer, .trendingContainer, .header{
     box-shadow: 1px 4px 3px grey;
 }
 
-/*SIDEBARD CSS*/
+/* SIDEBAR*/
 .sidebar
 {
     background-color: var(--sidebar-bg-color);
@@ -68,26 +68,63 @@ body{
     color: var(--sidebar-font-color);   
 }
 
-/*HEADER CSS*/
+/*HEADER*/
 .header{
     background-color: var(--card-bg-color);
     grid-area: 1 / 2 / 2 / 3;
     
     display: grid;
     grid-template-columns: 2fr 1fr;
+    padding-left: 3rem;
     z-index: 1; /*Need to put header above other DOM objects Z space for box shadow to work*/
 }
 
-/*DASHBOARD CSS*/
+.nametag{
+    display: flex;
+}
+
+.header>.nametag>img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.headerButtons{
+    align-self: center;
+    display: flex;
+    gap: .5rem;
+}
+
+.headerButtons>button{
+    border: none;
+    background-color: var(--sidebar-bg-color);
+    color: var(--sidebar-font-color);
+    height: 2.5rem;
+    width: 5.5rem;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+}
+
+/*GREETING*/
+.greeting{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header>.greeting>img{
+    height: 4rem;
+    width: 4rem;
+}
+
+/*DASHBOARD */
 .dashboard{
     background-color: var(--main-bg-color);
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(20rem, 1fr) 20rem; 
-    grid-template-rows: 3rem min-content 3rem min-content min-content;
+    grid-template-rows: 3rem min-content 3rem min-content 10fr;
     padding: 1rem;
-    overflow-y: scroll;
-    height: 100vh; /*Allows scrolling by setting heigh to 100% of view height*/ 
+    padding-right: 2rem;
+    height: 100vh; /*safe gaurds body from appearing*/
 }
 
 
@@ -102,7 +139,7 @@ body{
     grid-template-columns: repeat(auto-fill, 23rem); 
     grid-auto-rows: min-content;
 
-    gap: 1rem;    
+    gap: 1.5rem;    
     justify-content: start;
     align-content: flex-start;   
 }
@@ -112,13 +149,17 @@ body{
     border-radius: 5px;
 }
 
-/*PROJECT CARD CSS */
+.announcementContainer, .trendingContainer{
+    padding: 1rem 2rem;
+}
+
+/*PROJECT CARD*/
 .projectCard{
     justify-self: left;
     background: linear-gradient(to right,
                 var(--main-accent-color) 10px,
                 var(--card-bg-color) 10px);
-    height: 15rem;
+    height: 13rem;
     width: 23rem;
     display: grid;
 }
@@ -149,10 +190,9 @@ body{
     outline: none;
 }
 
-/*ANOUCEMENT CONTAINER CSS*/
+/*ANOUCEMENT CONTAINER*/
 .announcementContainer{
     display: grid;
-    padding: 1rem;
     row-gap: 1rem;
 }
 
@@ -162,11 +202,15 @@ body{
 }
 
 
-/*TRENDING CONTAINER CSS*/
+/*TRENDING CONTAINER*/
 .trendingContainer{
     grid-area: 4 / 2 / 5 / 3;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 1rem;
     row-gap: 2rem;
+}
+
+.trendingContainer>img{
+    width: 3rem;
+    height: 3rem;
 }
