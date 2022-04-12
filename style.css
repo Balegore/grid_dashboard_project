@@ -202,8 +202,7 @@ body{
     gap: 1rem;
     grid-template-columns: minmax(20rem, 1fr) 20rem; 
     grid-template-rows: 3rem min-content 3rem min-content 10fr;
-    padding: 1rem;
-    padding-right: 2rem;
+    padding: 1rem 3rem;
 }
 
 
