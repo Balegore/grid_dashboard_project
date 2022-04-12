@@ -2,13 +2,13 @@
 
 /*VAR AND ROOT STYLING*/
 :root{
-    --main-bg-color: lightgrey;
+    --main-bg-color: #f4f4f5;
     --main-font-color: black;
-    --main-accent-color: yellow;
+    --main-accent-color: #fbbf24;
     --card-bg-color: white;
-    --sidebar-bg-color: blue;
+    --sidebar-bg-color: #0284c7;
     --sidebar-font-color: white;
-    --button-hover-color: lightblue;
+    --button-hover-color: #7dd3fc;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -100,7 +100,7 @@ body{
 
 .sidebar>a:last-child{
     font-size: .75rem;
-    justify-self: right;
+    justify-self: center;
     margin: 0 0.5rem
 }
 
@@ -109,7 +109,7 @@ body{
     transform: scale(1.2);
 }
 
-.sidebar>a:nth-child(1):hover{
+.sidebar>a:nth-child(1):hover, .sidebar>a:last-child:hover{
     text-decoration: none;
     transform: none;
 }
